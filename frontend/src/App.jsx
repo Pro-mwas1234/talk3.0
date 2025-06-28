@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage'
 import { axiosInstance } from './lib/axios'
 import { useAuthStore } from './store/useAuthStore'
 import Loader from './components/loader/Loader'
+import { Toaster } from 'react-hot-toast'
 
 
 
@@ -41,6 +42,8 @@ const App = () => {
         <Route path='/settings' element={<SettingsPage/> }/>
         <Route path='/profile' element={authUser ? <ProfilePage/> : <Navigate to="/login"/>}/>
       </Routes>
+
+      <Toaster/>
     </div>
   )
 }
