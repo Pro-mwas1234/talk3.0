@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema(
     },
     profilePic: {
       type: String,
-      default: "https://images.app.goo.gl/LKrKx8iwdBNNh4kLA",
+      default: "https://pin.it/aFXS7KyGt",
     },
   },
   {
