@@ -7,14 +7,21 @@ import ChatHeader from './ChatHeader';
 const ChatContainer = () => {
     const {messages, getMessages,isMessagesLoading,selectedUser} = useChatStore();
 
-  useEffect(()=> {
-        getMessages(selectedUser?.id);
-    },[selectedUser?.id, getMessages]);
+ useEffect(() => {
+  if (selectedUser?._id) {
+    getMessages(selectedUser._id);
+  }
+}, [selectedUser?._id, getMessages]);
 
-
-    if(isMessagesLoading) return <MessageSkeleton/>
-
-
+if(isMessagesLoading) {
+  return (
+  <div className="flex-1 flex flex-col overflow-auto">
+    <ChatHeader/>
+    <MessageSkeleton/>
+    <MessageInput/>
+  </div>
+)
+}
   
 
   return (
