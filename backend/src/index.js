@@ -1,3 +1,8 @@
+
+console.log("ENV VARIABLES:", {
+  MONGO_URI: process.env.MONGO_URI ? "✅ Loaded" : "❌ Missing",
+  PORT: process.env.PORT
+});
 import express from 'express';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.route.js';
